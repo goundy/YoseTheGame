@@ -15,10 +15,16 @@ namespace YoseTheGame
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-
-            WebApiConfig.Register(GlobalConfiguration.Configuration);
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            RegisterRoutes(RouteTable.Routes);
+            //WebApiConfig.Register(GlobalConfiguration.Configuration);
+            //FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            //RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
+
+        public static void RegisterRoutes(RouteCollection routes)
+        {
+            routes.MapRoute("Ping", "ping", new { controller = "Ping", action = "Index" });
+        }
+
     }
 }
