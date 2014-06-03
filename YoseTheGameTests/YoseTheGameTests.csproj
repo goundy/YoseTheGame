@@ -62,9 +62,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="HomeControllerTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PingControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="HomeControllerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
