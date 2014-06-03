@@ -23,6 +23,7 @@ namespace YoseTheGame
 
         public static void RegisterRoutes(RouteCollection routes)
         {
+            routes.MapRoute("Home", "", new { controller = "Home", action = "Index" });
             routes.MapRoute("Ping", "ping", new { controller = "Ping", action = "Index" });
         }
 

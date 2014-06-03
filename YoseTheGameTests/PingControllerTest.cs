@@ -1,72 +1,36 @@
 ﻿using System;
-using System.Collections;
-using System.Globalization;
+using System.Web.Mvc;
 using NUnit.Framework;
-using System.Collections.Generic;
 using YoseTheGame.Controllers;
+
 
 namespace YoseTheGameTests
 {
-
-    /// <summary>
-    /// Classe de test pour le service Web de ping.
-    /// </summary>
     [TestFixture]
     public class PingControllerTest
     {
+        private ActionResult _result;
 
-#region "Members"
-
-        private PingController m_Target;
-
-#endregion
-
-
-#region "Methods"
-
-        /// <summary>
-        /// Survient avant l'exécution de chaque test.
-        /// </summary>
-        [SetUp] public void SetUp()
+        [SetUp]
+        public void ThisController()
         {
-            m_Target = new PingController();
+            var controller = new PingController();
+            _result = controller.Index();
         }
 
-        /// <summary>
-        /// Survient après l'exécution de chaque test.
-        /// </summary>
-        [TearDown]
-        public void TearDown()
-        {
-        }
-
-#endregion
-
-#region "Tests"
-
-#region "PingController"
-
-        /// <summary>
-        /// Un test pour le service Web de Ping.
-        /// </summary>
         [Test]
-        public void PingController_Valid()
-        {
-            //Préparation
-
-           // m_Target.
-
-            //Exécution
-            //m_Target.
-            //actual = target.PrimeFactorsOf(10);
-
-            //Validation
-            //Assert.That(Is.EqualTo(expected), target.PrimeFactorsOf(10));
+        public void ReturnsJson()
+        {            
+            Assert.That(_result, Is.InstanceOf<JsonResult>());
         }
 
-#endregion
+        [Test]
+        public void ReturnsTheExpectedJson()
+        {
+            var json = (JsonResult) _result;
 
-#endregion
+            Assert.That(json.Data.ToString(), Is.EqualTo("{ alive = True }"));
+        }
 
     }
 }

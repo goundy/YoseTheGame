@@ -43,9 +43,6 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="YoseTheGame">
-      <HintPath>..\YoseTheGame\bin\YoseTheGame.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -62,6 +59,19 @@
   <ItemGroup>
     <Compile Include="PingControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YoseTheGame\YoseTheGame.csproj">
+      <Project>{58D734FF-7C4F-4AE2-97A9-A05784243385}</Project>
+      <Name>YoseTheGame</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YoseTheGame\YoseTheGame.csproj">
+      <Project>{58d734ff-7c4f-4ae2-97a9-a05784243385}</Project>
+      <Name>YoseTheGame</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
