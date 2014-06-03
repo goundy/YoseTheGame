@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>40eebcd7-74cb-4cb4-82af-a5b4e100fd37</ProjectGuid>
+    <ProjectGuid>{DC14958B-0A33-4DD9-8183-3BCFBE83A286}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>YoseTheGameTests</RootNamespace>
